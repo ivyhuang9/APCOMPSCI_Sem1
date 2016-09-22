@@ -27,6 +27,6 @@ public class CompoundInterest
 		//finds total payment amount of loan
 		double payment = ci.totPay(r,p,n,t);
 		//prints total payment amount of loan
-		System.out.printf("Total payment amount of loan is $%.2f",payment);
+		System.out.printf("Your total monthly payment is $%.2f",payment);
 	}
 }
