@@ -3,7 +3,7 @@ import java.lang.Math;
 
 public class CompoundInterest
 {
-	public double totPay(double r,double p,int n,int t)
+	public double payment(double r,double p,double n,double t)
 	{
 		double cost = p*Math.pow(1+r/n,n*t);
 		double payment = cost/(t*12);
@@ -17,15 +17,15 @@ public class CompoundInterest
 		CompoundInterest ci = new CompoundInterest();
 		//takes user input
 		System.out.print("Enter principal: ");
-		double p = sc.nextDouble();
+		double princpl = sc.nextDouble();
 		System.out.print("Enter interest rate: ");
-		double r = sc.nextDouble();
+		double rate = sc.nextDouble();
 		System.out.print("Enter number of times compounded per year: ");
-		int n = sc.nextInt();
+		double number = sc.nextDouble();
 		System.out.print("Enter life of loan: ");
-		int t = sc.nextInt();
+		double time = sc.nextDouble();
 		//finds total payment amount of loan
-		double payment = ci.totPay(r,p,n,t);
+		double payment = ci.payment(rate,princpl,number,time);
 		//prints total payment amount of loan
 		System.out.printf("Your total monthly payment is $%.2f",payment);
 	}
