@@ -2,17 +2,17 @@ import java.util.Scanner;
 
 public class Rectangle
 {
-	static double length;
-	static double width;
+	static double l;
+	static double w;
+	static double perimeter;
 	
-	public static double calcPerim()
+	public static void calcPerim()
 	{
-		double p = 2*(length+width);
-		return p;
+		perimeter = 2*(l+w);
 	}
 	public static void print()
 	{
-		System.out.printf("Your rectangle is %.5f ft around.",calcPerim());
+		System.out.printf("Your rectangle is %.5f ft around.",perimeter);
 	}
 	public static void main(String[]args)
 	{
@@ -20,10 +20,11 @@ public class Rectangle
 		Scanner sc = new Scanner(System.in);
 		//takes user input
 		System.out.print("Enter length: ");
-		length = sc.nextDouble();
+		l = sc.nextDouble();
 		System.out.print("Enter width: ");
-		width = sc.nextDouble();
+		w = sc.nextDouble();
 		//prints perimeter
+		calcPerim();
 		print();
 	}
 }
