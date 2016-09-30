@@ -2,10 +2,7 @@ import java.util.Scanner;
 
 public class Average
 {
-	static double num1;
-	static double num2;
-	static double num3;
-	static double avg;
+	static double num1,num2,num3,avg;
 	
 	public static void average()
 	{

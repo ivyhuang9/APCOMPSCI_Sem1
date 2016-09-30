@@ -1,15 +1,12 @@
 import java.util.Scanner;
 
 public class Circle
-{
-	static double r;
-	static double area;
-	
-	public static void calcArea()
+{	
+	public static double calcArea(double r)
 	{
-		area = 3.14*r*r;
+		return 3.14*r*r;
 	}
-	public static void print()
+	public static void print(double r,double area)
 	{
 		System.out.printf("The area of a circle with a radius of %f is %.5f",r,area);
 	}
@@ -19,9 +16,9 @@ public class Circle
 		Scanner sc = new Scanner(System.in);
 		//takes user input
 		System.out.print("Enter radius: ");
-		r = sc.nextDouble();
+		double r = sc.nextDouble();
 		//prints area
-		calcArea();
-		print();
+		double area = calcArea(r);
+		print(r,area);
 	}
 }

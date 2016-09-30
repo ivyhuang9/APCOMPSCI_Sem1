@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Cube
 {
-	static double side;
-	static double sa;
+	static double side,sa;
 	
 	public static void calcSurf()
 	{

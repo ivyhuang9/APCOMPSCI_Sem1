@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 public class Rectangle
 {
-	static double l;
-	static double w;
-	static double perimeter;
+	static double l,w,perimeter;
 	
 	public static void calcPerim()
 	{
