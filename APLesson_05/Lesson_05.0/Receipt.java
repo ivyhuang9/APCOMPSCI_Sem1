@@ -8,10 +8,7 @@ public class Receipt
 		{
 			return .15*subtotal;
 		}
-		else
-		{
 			return 0;
-		}
 	}
 	public static void format(String word, double num)
 	{
