@@ -6,6 +6,10 @@ public class TreeDeg60
 	{
 		if(start <= stop)
 		{
+			for(int i = start; i < stop; i++)
+			{
+				System.out.print(" ");
+			}
 			System.out.println(word.substring(0,start));
 			start += 1;
 			tree(word, start, stop);
