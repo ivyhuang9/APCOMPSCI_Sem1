@@ -12,11 +12,21 @@ public class MPHRunner
 		int hours = sc.nextInt();
 		System.out.print("Enter minutes: ");
 		int minutes = sc.nextInt();
-		
 		//initiates new MilesPerHour object
 		MilesPerHour object = new MilesPerHour(distance, hours, minutes);
-		
 		//prints info
-		System.out.printf("%d miles in %d hours and %d minutes = %.1f mph", distance, hours, minutes, object.getMPH());
+		System.out.printf("%d miles in %d hours and %d minutes = %.0f mph\n", distance, hours, minutes, object.getMPH());
+		
+		//takes user inputs again
+		System.out.print("Enter distance: ");
+		distance = sc.nextInt();
+		System.out.print("Enter hours: ");
+		hours = sc.nextInt();
+		System.out.print("Enter minutes: ");
+		minutes = sc.nextInt();
+		//sets values
+		object.setValues(distance, hours, minutes);
+		//prints info
+		System.out.printf("%d miles in %d hours and %d minutes = %.0f mph", distance, hours, minutes, object.getMPH());
 	}
 }
