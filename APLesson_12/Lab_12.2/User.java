@@ -4,10 +4,10 @@ public class User
 	private int userID;
 	
 	public User(){
-		firstName = "Undefined";
-		lastName = "Undefined";
-		avatar = "Undefined";
-		userID = (int)(Math.random()*1000000)+1;
+		firstName = "";
+		lastName = "";
+		avatar = "";
+		userID = 0;
 	}
 	public User(String fN, String lN){
 		firstName = fN;
