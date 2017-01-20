@@ -9,8 +9,8 @@ public class UserDriver
 		String fN = sc.next();
 		System.out.print("Enter last name: ");
 		String lN = sc.next();
-		System.out.print("Do you want a public avatar? ");
-		if(sc.next().equals("no")){
+		System.out.print("Would you like to use a public avatar? (y or n) ");
+		if(sc.next().equals("n")){
 			User us = new User(fN, lN);
 			//prints user info
 			System.out.print("\n"+us);
