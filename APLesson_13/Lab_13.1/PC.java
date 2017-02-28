@@ -4,8 +4,8 @@ public class PC extends GameSystem
 		return "Keyboard and Mouse";
 	}
 	public String toString(){
-		return "Platform: " + super.getPlatform() +
-			"\nSerial #: " + super.getSerialNo() +
+		return "Platform: " + getPlatform() +
+			"\nSerial #: " + getSerialNo() +
 			"\nSystem Input: " + systemInput();
 	}
 }

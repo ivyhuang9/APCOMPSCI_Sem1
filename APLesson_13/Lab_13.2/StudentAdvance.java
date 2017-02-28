@@ -3,7 +3,7 @@ public class StudentAdvance extends Advance
 	private int daysLeft;
 	
 	public StudentAdvance(int days){
-		daysLeft = days;
+		super(days);
 	}
 	public double getPrice(){
 		if(daysLeft >= 10){
