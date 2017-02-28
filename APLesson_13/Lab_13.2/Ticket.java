@@ -1,7 +1,6 @@
 public abstract class Ticket
 {
 	private int serialNo;
-	private double price;
 	
 	public Ticket(){
 		serialNo = (int)(Math.random()*10000000)+1;
