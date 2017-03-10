@@ -22,12 +22,12 @@ public class Satellite
 		for(Location l : locate){
 			double one = (double)((int)(Math.random()*10000) + 1)/100;
 			double two = (double)((int)(Math.random()*10000) + 1)/100;
-			(Car)l.move(one, two);
+			((Car)l).move(one, two);
 			printout += "\nAfter " + l.getID() + " Moved (" + one + ", " + two + ")";
-			printout += "\nNew Location: (" + getLocation(l.getLoc()) + ")\n\n";
+			printout += "\nNew Location: (" + getLocation(l.getLoc()) + ")\n";
 		}
 		
-		printout += "\n\n" + "==========================" +
+		printout += "\n" + "==========================" +
                    "\nDistance from home...";
 		
 		for (Location l : locate){
@@ -38,10 +38,11 @@ public class Satellite
 	}
 
 	public static double getDistance(double[] car, double[] home){
-	   return Math.sqrt((Math.pow(car[0] - home[0], 2)+ Math.pow(car[1] - home[1], 2)));
+	   double distance = Math.sqrt((Math.pow(car[0] - home[0], 2)+ Math.pow(car[1] - home[1], 2)));
+	   return (double)Math.round(distance*100)/100;
 	}
 	
 	public static String getLocation(double[] loc){
-		return loc[0] + ", " + loc[1];
+		return (double)Math.round(loc[0]*100)/100 + ", " + (double)Math.round(loc[1]*100)/100;
 	}
 }
