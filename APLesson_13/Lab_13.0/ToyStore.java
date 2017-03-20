@@ -84,9 +84,14 @@ public class ToyStore
 	}
 	
 	public String toString(){
-		String output = "";
+		String output = "[";
 		for(Toy ty : toyList){
-			output += ty.toString() + "\n";
+			if(ty != toyList.get(toyList.size()-1)){
+				output += ty.toString() + ", ";
+			}
+			else{
+				output += ty.toString() + "]";
+			}
 		}
 		return output;
 	}
