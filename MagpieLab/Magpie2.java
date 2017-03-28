@@ -66,7 +66,7 @@ public class Magpie2
 	{
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement. */
-		String phrase = statement;
+		String phrase = statement.trim().toLowerCase();
 
 		/* New int variable psn = the location of goal in phrase after
 		   startPos
@@ -74,25 +74,27 @@ public class Magpie2
 			-->Refinement: Make sure we find goal by itself, and not part
 			of another word ("no" vs no in "know"). if you find an occurrence
 			of goal, make sure before and after aren't letters.*/
-		int psn;
+		int psn = phrase.indexOf(goal, startPos);
 		
 		/*As long as psn >= 0...*/
 		while(psn >= 0){
 			/*Check if psn > 0 - there is no need to check for before at the
 			beginning of the word
 				set before = the slot in phrase before psn */
-
-			//====>code here
+			if(psn > 0){
+				String before = phrase.substring(psn-1, psn);
+			}
 
 			/*check if you can fit goal into the rest of phrase - no need to
 			proceed otherwise
 				set after = the slot in phrase after psn + length of goal */
-
-			//=====> code here
+			
+			
 
 			/* if before and after are not letters (compare before to "a"
 				and after to "z")
 					--return psn */
+			
 
 			/*Otherwise, search for goal in phrase from psn + 1 forward */
 		}
