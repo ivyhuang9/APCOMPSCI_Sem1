@@ -29,15 +29,15 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		else if (statement.indexOf("no") >= 0)
+		else if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother") >= 0
+				|| findKeyword(statement, "father") >= 0
+				|| findKeyword(statement, "sister") >= 0
+				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
@@ -49,9 +49,20 @@ public class Magpie2
 		 * user mentions the word cat, dog, fish, or turtle
 		 * in their statement.
 		 *
-		 * Create addtional code (another else if) that
+		 * Create additional code (another else if) that
 		 * responds "He sounds like a pretty dank teacher"
 		 * if you mention "Robinette" in your statement */
+		else if(findKeyword(statement, "cat") >= 0
+				|| findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "fish") >= 0
+				|| findKeyword(statement, "turtle") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+		
+		else if(findKeyword(statement, "robinette") >= 0){
+			response = "He sounds like a pretty dank teacher.";
+		}
 
 		else
 		{
@@ -78,25 +89,33 @@ public class Magpie2
 		
 		/*As long as psn >= 0...*/
 		while(psn >= 0){
+			String before = "";
+			String after = "";
 			/*Check if psn > 0 - there is no need to check for before at the
 			beginning of the word
 				set before = the slot in phrase before psn */
 			if(psn > 0){
-				String before = phrase.substring(psn-1, psn);
+				before = phrase.substring(psn-1, psn);
 			}
 
 			/*check if you can fit goal into the rest of phrase - no need to
 			proceed otherwise
 				set after = the slot in phrase after psn + length of goal */
+			if(psn + goal.length() < phrase.length()){
+				after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
+			}
 			
-			
-
 			/* if before and after are not letters (compare before to "a"
 				and after to "z")
 					--return psn */
-			
+			if((before.compareTo("a") < 0 || before.compareTo("z") > 0) && (after.compareTo("a") < 0 || after.compareTo("z") > 0)){
+				return psn;
+			}
 
 			/*Otherwise, search for goal in phrase from psn + 1 forward */
+			else{
+				psn = phrase.indexOf(goal, psn+1);
+			}
 		}
 		return -1;
 
