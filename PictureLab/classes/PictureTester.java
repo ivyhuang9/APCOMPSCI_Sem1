@@ -51,6 +51,63 @@ public class PictureTester
     swan.explore();
   }
   
+  //Method to test keepOnlyBlue
+  public static void testKeepOnlyBlue() {
+	Picture beach = new Picture("beach.jpg");
+    beach.keepOnlyBlue();
+    beach.explore();
+  }
+  
+  //Method to test negate
+  public static void testNegate() {
+	Picture beach = new Picture("beach.jpg");
+	beach.negate();
+	beach.explore();
+  }
+  
+  //Method to test grayscale
+  public static void testGrayscale() {
+	Picture beach = new Picture("beach.jpg");
+	beach.grayscale();
+	beach.explore();
+  }
+  
+  //Method to test fixUnderwater
+  public static void testFixUnderwater() {
+	Picture water = new Picture("water.jpg");
+	water.explore();
+	water.fixUnderwater();
+	water.explore();
+  }
+  
+  //Method to test mirrorVerticalRightToLeft
+  public static void testMirrorVerticalRightToLeft() {
+	Picture beach = new Picture("beach.jpg");
+	beach.mirrorVerticalRightToLeft();
+	beach.explore();
+  }
+  
+  //Method to test mirrorHorizontal
+  public static void testMirrorHorizontal() {
+	Picture rm = new Picture("redMotorcycle.jpg");
+	rm.mirrorHorizontal();
+	rm.explore();
+  }
+  
+  //Method to test mirrorHorizontalBotToTop
+  public static void testMirrorHorizontalBotToTop() {
+	Picture rm = new Picture("redMotorcycle.jpg");
+	rm.mirrorHorizontalBotToTop();
+	rm.explore();
+  }
+  
+  //Method to test mirrorDiagonal
+  public static void testMirrorDiagonal() {
+	Picture beach = new Picture("beach.jpg");
+	beach.mirrorDiagonal();
+	beach.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -66,10 +123,13 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
+	//testMirrorVerticalRightToLeft();
+	//testMirrorHorizontal();
+	//testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
