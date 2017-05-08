@@ -318,6 +318,68 @@ public class Picture extends SimplePicture
 	}
   }
   
+  public void mirrorArms() {
+	int mirrorPoint = 193;
+	Pixel upperLeft = null;
+	Pixel lowerLeft = null;
+	Pixel upperRight = null;
+	Pixel lowerRight = null;
+	Pixel[][] pixels = this.getPixels2D();
+	  
+	for (int row = 159; row < 191; row++) {
+		for(int col = 105; col < 170; col++) {
+			upperLeft = pixels[row][col];
+			upperRight = pixels[row][408 - col];
+			lowerLeft = pixels[mirrorPoint - row + mirrorPoint][col];
+			lowerRight = pixels[mirrorPoint - row + mirrorPoint][408 - col];
+			lowerLeft.setColor(upperLeft.getColor());
+			lowerRight.setColor(upperRight.getColor());
+		}
+	}
+  }
+  
+  public void mirrorGull() {
+	int mirrorPoint = 348;
+	Pixel leftPixel = null;
+	Pixel rightPixel = null;
+	Pixel[][] pixels = this.getPixels2D();
+	  
+	for (int row = 233; row < 320; row++) {
+		for (int col = 239; col < 345; col++) {
+			leftPixel = pixels[row][col];
+			rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+			rightPixel.setColor(leftPixel.getColor());
+		}
+	}
+  }
+  
+  public void copy(Picture fromPic, int startRow, int endRow, int startCol, int endCol) {
+	Pixel fromPixel = null;
+	Pixel toPixel = null;
+	Pixel[][] toPixels = this.getPixels2D();
+	Pixel[][] fromPixels = fromPic.getPixels2D();
+	
+  }
+  
+  public void edgeDetection2(int edgeDist)
+  {
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color rightColor = null;
+    for (int row = 0; row < pixels.length; row++) {
+      for (int col = 0; col < pixels[0].length-1; col++) {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col+1];
+        rightColor = rightPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) > edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+  }
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
