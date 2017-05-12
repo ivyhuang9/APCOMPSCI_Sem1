@@ -309,13 +309,22 @@ public class Picture extends SimplePicture
 	Pixel bl = null;
 	int width = pixels[0].length;
 	int length = pixels.length;
-	for (int row = 0; row < length/2; row++) {
+	if (width < length) {
+		int smaller = width;
+	}
+	else {
+		int smaller = length;
+	}
+	for (int i = 0; i < smaller; i++) {
+		
+	}
+	/*for (int row = 0; row < length/2; row++) {
 		for (int col = 0; col < width/2; col++) {
 			tr = pixels[row][width - 1 - col];
 			bl = pixels[length - 1 - row][col];
 			tr.setColor(bl.getColor());
 		}
-	}
+	}*/
   }
   
   public void mirrorArms() {
