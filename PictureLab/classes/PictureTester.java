@@ -127,6 +127,12 @@ public class PictureTester
 	blank.explore();
   }
   
+  public static void testMyCollage() {
+	Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+  }
+  
   public static void testEdgeDetection2() {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection2(10);
@@ -156,6 +162,7 @@ public class PictureTester
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
+	testMyCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

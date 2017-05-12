@@ -369,7 +369,18 @@ public class Picture extends SimplePicture
   
   //3 pics (can be same) copied 3 times with 3 diff pic manipulatiosn and at least one mirroring
   public void myCollage() {
-	
+	Picture seagull = new Picture("seagull.jpg");
+	this.copy(seagull, 0, 0, 227, 330, 228, 348);
+	Picture robot = new Picture("robot.jpg");
+	robot.negate();
+	this.copy(robot, 103, 0);
+	seagull.zeroBlue();
+	this.copy(seagull, 175, 0, 227, 330, 228, 348);
+	robot.grayscale();
+	this.copy(robot, 278, 0);
+	seagull.edgeDetection(15);
+	this.copy(seagull, 350, 0, 227, 330, 228, 348);
+	this.mirrorVertical();
   }
   
   public void edgeDetection2(int edgeDist)
