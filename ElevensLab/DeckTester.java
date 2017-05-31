@@ -47,5 +47,14 @@ public class DeckTester {
         System.out.println("Empty: " + d3.isEmpty());
         System.out.println("Size: " + d3.size());
         System.out.println(d3);
+		
+		//testing shuffle method (Activity 4)
+		String[] r = {"ace","2","3","4","5","6","7","8","9","10","jack","queen","king"};
+		String[] s = {"clubs","hearts","spades","diamonds"};
+		int[] v = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+		System.out.println("Shuffling a standard deck of 52 cards...");
+		Deck standard = new Deck(r, s, v);
+		standard.shuffle();
+		System.out.println(standard);
     }
 }
